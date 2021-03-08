@@ -1,0 +1,57 @@
+https://gist.github.com/ravivish/5c0a4486566fdffbefd7fd7c35a0fa97
+
+API Specs
+
+
+GET /api/notes
+Sample Response Body:
+[{
+	"id": "test",
+	"title": "title",
+	"body":"body",
+	"pinnedstatus":"false",
+	"created_at":"date",
+	"updated_at":"date",
+}]
+Status: 200
+
+POST /api/notes
+Sample Request Body:
+{
+	"title": "test",
+	"body": "this is test data",
+	"pinnedstatus":"false"
+}
+
+Sample Response Body:
+{
+	"id": "nanoid"
+}
+Status: 201 (note Created), 400 (error)
+
+
+GET /api/notes/:id
+Sample Response Body:
+{
+	"id": "nanoid",
+	"title":"this is title",
+	"body":"this is body text",
+	"pinnedstatus":"false",
+	"created_at":"date",
+	"updated_at":"date"
+}
+
+Status: 200 (Valid note), 404 (error)
+
+Patch /api/notes/:id
+sample req:
+{
+  "id":"nanoid",
+  "title":"title",
+  "body":"thi is new test"
+  "pinnedstatus":"true"
+}
+status: 201
+
+DELETE /api/notes/:id
+Status: 204 (Deleted)
